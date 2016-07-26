@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd 
+                        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd">
+	<!-- ========================= Start of PERSISTENCE DEFINITIONS ========================= --> 
+	 <bean id="teacherService" class="com.facerecognition.service.teacher.impl.TeacherServiceImpl">
+	     <property name="genericJDBCDao" ref="genericJDBCDao"/>
+	     <property name="genericHBDao" ref="genericHBDao"/>
+	 </bean>
+	 
+	 <bean id="mClassService" class="com.facerecognition.service.mclass.impl.MClassServiceImpl">
+	     <property name="genericJDBCDao" ref="genericJDBCDao"/>
+	     <property name="genericHBDao" ref="genericHBDao"/>
+	 </bean>
+	 
+	 <bean id="studentService" class="com.facerecognition.service.student.impl.StudentServiceImpl">
+	     <property name="genericJDBCDao" ref="genericJDBCDao"/>
+	     <property name="genericHBDao" ref="genericHBDao"/>
+	 </bean>
+	 
+	 <bean id="attendService" class="com.facerecognition.service.attend.impl.AttendServiceImpl">
+	     <property name="genericJDBCDao" ref="genericJDBCDao"/>
+	     <property name="genericHBDao" ref="genericHBDao"/>
+	 </bean>
+</beans>

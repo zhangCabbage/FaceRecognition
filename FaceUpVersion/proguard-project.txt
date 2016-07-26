@@ -1,0 +1,91 @@
+# To enable ProGuard in your project, edit project.properties
+# to define the proguard.config property as described in that file.
+#
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in ${sdk.dir}/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+
+
+
+-optimizationpasses 5                                                       # 指定代码的压缩级别
+-dontusemixedcaseclassnames                                                 # 是否使用大小写混合
+-dontskipnonpubliclibraryclasses                                            # 是否混淆第三方jar
+-dontpreverify                                                              # 混淆时是否做预校验
+
+-ignorewarnings                                                             # 屏蔽警告
+-dontwarn                                                                   # 也是屏蔽警告的意思
+
+-verbose                                                                    # 混淆时是否记录日志
+-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*    # 混淆时所采用的算法
+
+-keepattributes *Annotation*
+-keepattributes Signature
+
+# 保持哪些类不被混淆
+-keep public class * extends android.app.Fragment  
+-keep public class * extends android.app.Activity
+-keep public class * extends android.app.Application
+-keep public class * extends android.app.Service
+-keep public class * extends android.content.BroadcastReceiver
+-keep public class * extends android.content.ContentProvider
+-keep public class * extends android.app.backup.BackupAgentHelper
+-keep public class * extends android.preference.Preference
+-keep public class * extends android.support.v4.**
+-keep public class com.android.vending.licensing.ILicensingService
+-keep public class * implements java.io.Serializable
+
+# 基本的不混淆方法
+-keepclasseswithmembernames class * {                                       # 保持 native 方法不被混淆
+    native <methods>;
+}
+-keepclasseswithmembernames class * {                                       # 保持自定义控件类不被混淆
+    public <init>(android.content.Context, android.util.AttributeSet);
+}
+-keepclasseswithmembernames class * {
+    public <init>(android.content.Context, android.util.AttributeSet, int);
+}
+-keepclassmembers enum * {                                                  # 保持枚举 enum 类不被混淆
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+-keep class * implements android.os.Parcelable {                            # 保持 Parcelable 不被混淆
+  public static final android.os.Parcelable$Creator *;
+}
+
+
+# 不混淆第三方jar包中的类
+# 第三方jar包中如果有.so文件，不用去理会
+# 引入的第三方jar文件不要混淆，否则可能会报异常
+-libraryjars libs/android-support-v4.jar
+-libraryjars libs/faceppofflinesdk.jar
+-libraryjars libs/faceppsdk.jar
+-libraryjars libs/mta-sdk-1.6.2.jar
+-libraryjars libs/open_sdk_r4889.jar
+
+-keep class com.faceplusplus.api.** {*;}
+-keep class com.faceapp.** {*;}
+-keep class com.tencent.tauth.** {*;}
+
+#-keep class com.baidu.mapapi.** {*;}
+#-keep class com.weibo.sdk.android.** {*;}
+#-keep class com.sina.sso.** {*;}
+
+-keep class org.json.** {*;}
+-keep class org.apache.http.** {*;}
+-keep class android.support.v4.** {*;}
+
+

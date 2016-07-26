@@ -1,0 +1,64 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="orange.zhang.app"
+    android:versionCode="1"
+    android:versionName="1.2" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="19" />
+    
+	<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />  <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />  <!-- 往SDCard写入数据权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>  <!-- 打开了Internet网络权限-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+       
+        <activity android:name="com.zhang.activity.SplashActivity">
+            <intent-filter >
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        
+        <activity android:name="com.zhang.activity.LoginActivity"></activity>
+        <activity android:name="com.zhang.activity.MainActivity"></activity>
+        <activity android:name="com.zhang.activity.SelectClassActivity"></activity>
+        <activity android:name="com.zhang.activity.DetailPictureActivity"></activity>
+        <activity android:name="com.zhang.activity.ClassAddActivity"></activity>
+        <activity android:name="com.zhang.activity.SelectStudentActivity"></activity>
+        <activity android:name="com.zhang.activity.StudentAddActivity"></activity>
+        <activity android:name="com.zhang.activity.PeopleSettingActivity"></activity>
+        <activity android:name="com.zhang.activity.PictureAddActivity"></activity>
+        <activity android:name="com.zhang.activity.ShowAttendActivity"></activity>
+        <activity android:name="com.zhang.activity.SelectAttendTimeActivity"></activity>
+        <activity android:name="com.zhang.activity.SelectAttendClassActivity"></activity>
+        <activity android:name="com.zhang.activity.ShowClassTotalAttendActivity"></activity>
+        
+        <activity android:name="com.zhang.activity.UseCamera" android:label="@string/app_name"></activity>
+        <activity android:name="com.zhang.activity.PersonAdd"></activity>
+        <activity android:name="com.zhang.activity.RegisterActivity" android:theme="@android:style/Theme.NoTitleBar" android:label="@string/app_name"></activity>
+        
+        
+        <activity android:name="com.tencent.tauth.AuthActivity" 
+            android:noHistory="true" 
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+				<category android:name="android.intent.category.DEFAULT" />
+				<category android:name="android.intent.category.BROWSABLE" />
+				<data android:scheme="222222" />
+			</intent-filter>
+		</activity>
+        <activity android:name="com.tencent.connect.common.AssistActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="orientation|keyboardHidden|screenSize" /> 
+            
+    </application>
+        
+</manifest>

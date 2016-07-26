@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    
+	<ImageView 
+        android:id="@+id/item_class_gridview_imageView"
+        style="@style/work_add_class"
+        android:scaleType="centerCrop"/>
+	
+	<TextView 
+	    android:id="@+id/item_class_gridview_textView"
+	    android:text=""
+	    android:singleLine="true"
+	    android:textColor="@color/white"
+	    android:textSize="12sp"
+	    android:layout_height="wrap_content"
+	    android:layout_width="wrap_content"
+	    android:layout_alignTop="@id/item_class_gridview_imageView"
+	    android:layout_alignLeft="@id/item_class_gridview_imageView"
+	    android:layout_alignBottom="@id/item_class_gridview_imageView"
+	    android:layout_alignRight="@id/item_class_gridview_imageView"
+	    android:paddingTop="10dp"
+	    android:gravity="center"
+	    />
+</RelativeLayout>

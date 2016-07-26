@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical" >
+    <TextView 
+        android:id="@+id/text_group_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/group_name"/>
+    <EditText 
+        android:id="@+id/group_name_edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/group_name_text"/>
+    
+    <Spinner 
+        android:id="@+id/group_spinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"/>
+    
+	<TextView 
+        android:id="@+id/text_person_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/person_name"/>
+    <EditText 
+        android:id="@+id/person_name_edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"/>
+    
+    <RelativeLayout 
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+        <Button 
+            android:id="@+id/add_takePic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="@string/button_takePic_text"
+            android:onClick="addTakePic"/>
+        
+        <Button 
+            android:id="@+id/add_fromPicMap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/add_takePic"
+            android:layout_alignTop="@id/add_takePic"
+            android:text="@string/button_fromPicMap_text"
+            android:onClick="addFromPicMap"/>
+        
+        <EditText 
+            android:id="@+id/add_pic_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/add_fromPicMap"
+            android:layout_alignTop="@id/add_takePic"
+            android:layout_alignBottom="@id/add_takePic"
+            android:text="@string/add_pic_path"
+            android:editable="false"
+            android:singleLine="true"/>
+       
+        <Button 
+            android:id="@+id/add_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/add_pic_button_text"
+            android:onClick="add"/>
+        
+        <TextView 
+            android:id="@+id/show_Result"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/add_button"
+            android:layout_marginBottom="80dp"
+            android:gravity="center"
+            android:text=""/>
+        
+    </RelativeLayout>
+</LinearLayout>

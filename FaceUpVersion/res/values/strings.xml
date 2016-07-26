@@ -1,0 +1,41 @@
+<resources>
+
+    <string name="app_name">你是谁</string>
+    
+    <string name="first_login_text">登录</string>
+    <string name="first_register_text">注册</string>
+    
+    <string name="register_menu">请填写个人信息</string>
+    
+    <string name="textView_result_text">此app用来研究关于使用手机摄像机、以及图片处理、人脸识别等方面的技术问题</string>
+	<string name="button_takePic_text">拍照</string>
+	<string name="button_fromPicMap_text">选择</string>
+	<string name="button_onClick_text">请戳我</string>
+	
+	<string name="menu_add">添加</string>
+	<string name="menu_set">设置</string>
+	<string name="menu_exit">退出</string>
+	<string name="menu_login">登录</string>
+	<string name="menu_about">关于</string>
+	
+	<string name="group_name">团队（可不填）：</string>
+	<string name="group_name_text">default</string>
+	<string name="person_name">姓名：</string>
+	
+	
+	<string name="add_pic_path">图片位置</string>
+	<string name="add_pic_button_text">添加</string>
+	
+	
+	
+	
+	<string name="actionBar_left">考勤</string>
+	<string name="actionBar_right">娱乐</string>
+	<string name="actionBar_select_class">请选择团队</string>
+	<string name="actionBar_select_student">请选择人员</string>
+	
+	<string name="menu_exit_change">注销</string>
+	<string name="menu_exit_sure">退出</string>
+	<string name="menu_exit_cancel">取消</string>
+	
+</resources>

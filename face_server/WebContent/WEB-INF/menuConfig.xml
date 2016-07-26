@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ==========================================================================================================================================	-->
+<!-- 										说明 																								-->
+<!-- 	1、此配置文件为系统一二级菜单配置文件。																											-->
+<!-- 	2、菜单id以"f_编码"组成，编码以模块为单位规划此模块的编码范围，如第一个菜单：0-999，第二个菜单：1000-1999。												-->
+<!--  	3、节点属性：																																-->
+<!--				 menuName    ：菜单名称																										-->
+<!--				 level       ：菜单级别 （1：一级菜单； 2：二级菜单）																				-->
+<!--				 handleType  ：操作类型 （1:系统默认脚本函数执行； 2：自定义脚本函数执行,必须在自定函数的请求url中加入 参数：menuId=f_xx）					-->		
+<!--				 visitType   :浏览方式 （1：在当前窗口打开；  2：在新窗口中打开）																	-->
+<!--                 resource    :访问资源（url 或 脚本）																							-->
+<!--    			 resourceType:资源类型（1：内部 2：外部系统资源）																					-->
+<!--    			 width       :菜单显示宽度（默认：80）																					-->
+<!--    注意：所有菜单必须使用Action																													-->
+<!-- ==========================================================================================================================================	-->
+<menus>
+  	<f_0 menuName="首页" level="1" handleType="1" visitType="1" width="71" resource="/homePage.do">
+	   <f_1011 menuName="首页" level="2" handleType="1" visitType="1" resource="/homePage.do"/> 
+	</f_0> 
+	<f_7000 menuName="文档管理" level="1" handleType="1" visitType="1" width="71" resource="/documentControl.do">
+		<f_7001 menuName="文档管理" level="2" handleType="1" visitType="1" resource=""/>
+	</f_7000>	
+	<f_8000 menuName="系统管理" level="1" handleType="1" visitType="1" width="71" resource="/logSystem.do">
+		<f_8001 menuName="日志管理" level="2" handleType="1" visitType="1" resource="/logSystem.do"/> 
+		<f_8004 menuName="异常监控" level="2" handleType="1" visitType="1" resource="/exceptPort.do"/>		 
+		<f_8008 menuName="|  用户管理" level="2" handleType="1" visitType="1" resource="/userListing.do"/>
+		<f_8009 menuName="权限资源管理" level="2" handleType="1" visitType="1" resource="/authority.do"/>
+		<f_8010 menuName="角色管理" level="2" handleType="1" visitType="1" resource="/roleSystem.do"/>    
+	</f_8000>	
+	<!-- <f_8000 menuName="权限管理" level="1" handleType="1" visitType="1" width="71" resource="/entry_SysADM.action">
+		<f_8001 menuName="用户管理" level="2" handleType="1" visitType="1" resource="/user_SysADM.action"/>
+		<f_8002 menuName="系统权限" level="2" handleType="1" visitType="1" resource="/authority_SysADM.action"/>
+		<f_8003 menuName="角色管理" level="2" handleType="1" visitType="1" resource="/role_SysADM.action"/>
+	</f_8000>-->	   
+	<!-- <f_9000 menuName="消息列表" level="1" handleType="1" visitType="1" width="71" resource="/messageControl.do">
+		<f_9001 menuName="消息列表" level="2" handleType="1" visitType="1" resource="/messageControl.do"/>
+		<f_9002 menuName="发送消息" level="2" handleType="1" visitType="1" resource="/messageEdit.do"/>
+		<f_9003 menuName="已发送消息列表" level="2" handleType="1" visitType="1" resource="/messageSend.do"/>
+	</f_9000> -->
+	<f_9000 menuName="消息公告" level="1" handleType="1" visitType="1" width="71" resource="/messageControl.do">
+		<f_9001 menuName="消息管理" level="2" handleType="1" visitType="1" resource="/messageControl.do"/>
+		 
+	</f_9000>
+ 
+	 
+  	<f_10000 menuName="帮助" level="1" handleType="1" visitType="1" width="71" resource="/helpWord.do">
+        <f_10001 menuName="帮助" level="2" handleType="1" visitType="1" resource=""/>
+	</f_10000>
+	
+	
+</menus>

@@ -1,0 +1,111 @@
+# view res/layout/activity_main.xml #generated:14
+-keep class android.support.v4.widget.DrawerLayout { <init>(...); }
+
+# view AndroidManifest.xml #generated:58
+-keep class com.tencent.connect.common.AssistActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:48
+-keep class com.tencent.tauth.AuthActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:33
+-keep class com.zhang.activity.ClassAddActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:32
+-keep class com.zhang.activity.DetailPictureActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:29
+-keep class com.zhang.activity.LoginActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:30
+-keep class com.zhang.activity.MainActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:36
+-keep class com.zhang.activity.PeopleSettingActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:44
+-keep class com.zhang.activity.PersonAdd { <init>(...); }
+
+# view AndroidManifest.xml #generated:37
+-keep class com.zhang.activity.PictureAddActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:45
+-keep class com.zhang.activity.RegisterActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:40
+-keep class com.zhang.activity.SelectAttendClassActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:39
+-keep class com.zhang.activity.SelectAttendTimeActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:31
+-keep class com.zhang.activity.SelectClassActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:34
+-keep class com.zhang.activity.SelectStudentActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:38
+-keep class com.zhang.activity.ShowAttendActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:41
+-keep class com.zhang.activity.ShowClassTotalAttendActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:22
+-keep class com.zhang.activity.SplashActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:35
+-keep class com.zhang.activity.StudentAddActivity { <init>(...); }
+
+# view AndroidManifest.xml #generated:43
+-keep class com.zhang.activity.UseCamera { <init>(...); }
+
+# view res/layout/activity_select_class.xml #generated:19
+# view res/layout/activity_select_student.xml #generated:19
+# view res/layout/activity_show_attend.xml #generated:20
+# view res/layout/activity_show_class_total_attend.xml #generated:20
+# view res/layout/fragment_addperson.xml #generated:8
+-keep class com.zhang.view.ClearEditText { <init>(...); }
+
+# view res/layout/activity_add_picture.xml #generated:43
+# view res/layout/activity_add_student.xml #generated:64
+# view res/layout/fragment_work.xml #generated:32
+# view res/layout/fragment_work.xml #generated:80
+-keep class com.zhang.view.MyGridView { <init>(...); }
+
+# view res/layout/activity_detail_picture.xml #generated:6
+-keep class com.zhang.view.MyImageView { <init>(...); }
+
+# view res/layout/activity_add_class.xml #generated:7
+# view res/layout/activity_add_picture.xml #generated:15
+# view res/layout/activity_add_student.xml #generated:15
+# view res/layout/activity_main.xml #generated:8
+# view res/layout/activity_people_setting.xml #generated:15
+# view res/layout/activity_register_phone.xml #generated:12
+# view res/layout/activity_select_class.xml #generated:12
+# view res/layout/activity_select_class_attend.xml #generated:13
+# view res/layout/activity_select_student.xml #generated:12
+# view res/layout/activity_select_time_attend.xml #generated:13
+# view res/layout/activity_show_attend.xml #generated:13
+# view res/layout/activity_show_class_total_attend.xml #generated:13
+-keep class com.zhang.view.TitleBarView { <init>(...); }
+
+# view res/layout/activity_select_class_attend.xml #generated:20
+-keep class com.zhang.view.wheelview.LoopView { <init>(...); }
+
+# onClick res/layout/personadd.xml #generated:69
+-keepclassmembers class * { *** add(...); }
+
+# onClick res/layout/personadd.xml #generated:48
+-keepclassmembers class * { *** addFromPicMap(...); }
+
+# onClick res/layout/personadd.xml #generated:40
+-keepclassmembers class * { *** addTakePic(...); }
+
+# onClick res/layout/app_exit.xml #generated:51
+-keepclassmembers class * { *** app_Cancle_Onclick(...); }
+
+# onClick res/layout/app_exit.xml #generated:17
+-keepclassmembers class * { *** app_ChangeUser_Onclick(...); }
+
+# onClick res/layout/app_exit.xml #generated:31
+-keepclassmembers class * { *** app_Exit_Onclick(...); }
+

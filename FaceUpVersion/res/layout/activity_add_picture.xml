@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg">
+    
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg"
+    android:orientation="vertical" >
+    
+    
+    <com.zhang.view.TitleBarView
+        android:id="@+id/addStudent_actionBar"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"/>
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/base_bg"
+        android:scrollbars="vertical">
+        
+        <LinearLayout android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+    		
+            <RelativeLayout style="@style/Cabbage_content"
+            	android:layout_marginTop="5dp"
+        		android:layout_marginLeft="20dp"
+        		android:layout_marginRight="20dp">
+            	<ImageView android:id="@+id/addPicture_title"
+                	style="@style/main_title"
+                	android:background="@drawable/t_title_3"/>
+            	<TextView style="@style/Cabbage_content"
+                	android:textColor="@color/white"
+                	android:layout_centerInParent="true"
+                	android:text="照片"/>
+        	</RelativeLayout>
+	 
+       		<com.zhang.view.MyGridView
+           		android:id="@+id/addPicture_photo_GridView"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:background="@color/white"
+            	android:layout_marginLeft="20dp"
+	       		android:layout_marginRight="20dp"
+            	android:layout_marginBottom="5dp"
+            	android:padding="4dp"
+            	android:listSelector="@android:color/transparent"
+            	android:numColumns="4"
+            	android:horizontalSpacing="4dp"
+            	android:verticalSpacing="4dp"
+            	android:gravity="start"/>
+            
+       		<Button 
+        		android:id="@+id/addPicture_sure"
+        		android:layout_height="60dp"
+        		android:layout_width="match_parent"
+        		android:layout_margin="20dp"
+        		android:text="确定"
+        		android:textSize="18sp"
+        		android:background="@drawable/button_bg"
+        		android:textColor="@drawable/title_font"/>
+        </LinearLayout>
+        
+        
+   	</ScrollView>
+    
+</LinearLayout>
+   
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:id="@+id/addPicture_waiting_layout"
+        android:background="#b0000000"
+        android:visibility="gone"
+        android:gravity="center">
+    	<ProgressBar 
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:id="@+id/addPicture_waiting_progress"
+    	    android:clickable="true"/>
+    	<TextView 
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:id="@+id/addPicture_waiting_textView"
+    	    android:text="正在拼了命的为您添加 ..."
+    	    android:textColor="@color/white"/>
+    </LinearLayout>
+    
+</FrameLayout>
+

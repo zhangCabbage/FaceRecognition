@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg"
+    android:orientation="vertical" >
+    <com.zhang.view.TitleBarView
+        android:id="@+id/addClass_actionBar"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"/>
+    
+    <LinearLayout
+        android:id="@+id/addClass_BG"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="horizontal"
+        android:background="@drawable/register_phone_bg">
+        
+        <EditText 
+            android:id="@+id/addClass_className"
+            android:layout_height="56dp"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"
+            android:hint="输入添加的团队名称，如：数据挖掘部1101"
+            android:background="@android:color/white"
+            android:padding="5dp"/>
+    </LinearLayout>
+    
+    <Button 
+        android:id="@+id/addClass_sure"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:layout_margin="20dp"
+        android:text="确定"
+        android:textSize="18sp"
+        android:background="@drawable/button_bg"
+        android:textColor="@drawable/title_font"/>
+
+</LinearLayout>

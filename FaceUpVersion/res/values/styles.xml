@@ -1,0 +1,157 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    
+    <!-- 自定义 -->
+    
+    <style name="dialogLoadProgressStyle">
+        <item name="android:maxWidth">30.0dip</item>
+        <item name="android:maxHeight">30.0dip</item>
+        <item name="android:minWidth">30.0dip</item>
+        <item name="android:minHeight">30.0dip</item>
+    </style>
+    
+    <style name="DialogStyle">
+        <!-- 设置完全透明 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!-- 设置无边框 -->
+        <!-- <item name="android:windowFrame">@null</item> -->
+        <!-- 设置无标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 设置为浮动窗口 -->
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 设置动画 -->
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <!-- 设置屏幕变暗 -->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+    
+    <style name="top_work">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@drawable/title_font</item>
+        <item name="android:background">@drawable/actionbar_left_button</item>
+    </style>
+    
+    <style name="top_fun">
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@drawable/title_font</item>
+        <item name="android:background">@drawable/actionbar_right_button</item>
+    </style>
+    
+    <style name="pop_InOutAnim_style">
+        <item name="android:windowEnterAnimation">@anim/pop_enter</item>
+        <item name="android:windowExitAnimation">@anim/pop_out</item>
+    </style>
+    
+    
+    <style name="app_pop">
+        <item name="android:windowEnterAnimation">@anim/pop_up</item>
+        <item name="android:windowExitAnimation">@anim/pop_down</item>
+    </style>
+    
+    
+    <style name="Cabbage_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="Cabbage_fill_con">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    
+    <style name="main_title">
+        <item name="android:layout_width">85dp</item>
+        <item name="android:layout_height">30dp</item>
+    </style>
+    
+    <style name="work_add_class">
+        <item name="android:layout_width">79dp</item>
+        <item name="android:layout_height">37dp</item>
+    </style>
+    
+    <style name="Cabbage_fill_con.ori_vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+    
+    <style name="Cabbage_fill_con.ori_horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+    
+     <style name="Cabbage_fill_con.ori_vertical.margin">
+         <item name="android:layout_margin">5dp</item>
+    </style>
+    
+    <style name="Cabbage_content.TextView">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="Cabbage_content.View_margin">
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+    <style name="Cabbage_content.ImageView">
+        <item name="android:contentDescription">@string/app_name</item>
+    </style>
+
+    <style name="Cabbage_content.ImageView.Photo_Large">
+        <item name="android:layout_width">75dp</item>
+        <item name="android:layout_height">75dp</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+    <style name="Cabbage_content.ImageView.Photo_Middle">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="Cabbage_content.ImageView.Photo_Small">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+
+    <style name="Cabbage_content.TextView._Green">
+        <item name="android:textColor">@color/green</item>
+    </style>
+
+    <style name="Cabbage_content.TextView._White">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="Cabbage_content.TextView._Gray">
+        <item name="android:textColor">@color/base_color_text_gray</item>
+    </style>
+
+    <style name="Cabbage_content.TextView._Black">
+        <item name="android:textColor">@color/base_color_text_black</item>
+    </style>
+    
+    
+</resources>

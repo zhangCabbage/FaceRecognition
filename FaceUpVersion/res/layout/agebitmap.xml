@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_age_and_gender"
+        android:drawableLeft="@drawable/male1"
+        android:background="@drawable/hint"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:text="nihao"/>
+<!-- #ffe06826 -->
+</FrameLayout>

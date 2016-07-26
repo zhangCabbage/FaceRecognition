@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/base_bg">
+    
+    <ScrollView 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/base_bg"
+        android:scrollbars="vertical">
+	<LinearLayout 
+    	android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:background="@color/base_bg"
+    	android:orientation="vertical" >
+    
+    	<!-- 第一部分，用来选择班级 -->
+    	<LinearLayout style="@style/Cabbage_fill_con.ori_vertical.margin"
+        	android:paddingTop="8dp">
+        	<RelativeLayout style="@style/Cabbage_content">
+            	<ImageView android:id="@+id/class_title"
+                	style="@style/main_title"
+                	android:background="@drawable/t_title_1"/>
+            		<TextView style="@style/Cabbage_content"
+                	android:textColor="@color/white"
+                	android:layout_centerInParent="true"
+                	android:text="团队"/>
+        	</RelativeLayout>
+        
+        	<com.zhang.view.MyGridView
+        	    android:id="@+id/work_class_GridView"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:background="@color/white"
+            	android:padding="4dp"
+            	android:listSelector="@android:color/transparent"
+            	android:numColumns="4"
+            	android:horizontalSpacing="4dp"
+            	android:verticalSpacing="4dp"
+            	android:gravity="start"/>
+        	
+    	</LinearLayout>
+    
+    	<!-- 第二部分，选择点名方式 -->
+    	<LinearLayout style="@style/Cabbage_fill_con.ori_vertical.margin">
+        	<RelativeLayout style="@style/Cabbage_content.TextView._White">
+            	<ImageView android:id="@+id/style_title"
+            	    style="@style/main_title"
+                	android:background="@drawable/t_title_2"/>
+            	<TextView style="@style/Cabbage_content"
+                	android:textColor="@color/white"
+               		android:layout_centerInParent="true"
+                	android:text="方式"/>
+        	</RelativeLayout>
+        
+        	<LinearLayout style="@style/Cabbage_fill_con.ori_horizontal"
+            	android:padding="4dp">
+            	<Spinner android:id="@+id/select_style_spinner"
+                	android:layout_width="wrap_content"
+                	android:layout_height="45dp"/>
+        	</LinearLayout>
+    	</LinearLayout>
+	
+		<!-- 第三部分，用来收集图片，可能十加张图片，此部分开始时不显示的 -->
+        <RelativeLayout style="@style/Cabbage_content"
+            android:layout_marginTop="5dp"
+        	android:layout_marginLeft="5dp"
+        	android:layout_marginRight="5dp">
+            	<ImageView android:id="@+id/picture_title"
+                	style="@style/main_title"
+                	android:background="@drawable/t_title_3"/>
+            	<TextView style="@style/Cabbage_content"
+                	android:textColor="@color/white"
+                	android:layout_centerInParent="true"
+                	android:text="照片"/>
+        </RelativeLayout>
+	 
+       <com.zhang.view.MyGridView
+               android:id="@+id/work_photo_GridView"
+            	android:layout_width="fill_parent"
+            	android:layout_height="wrap_content"
+            	android:background="@color/white"
+            	android:layout_marginLeft="5dp"
+	       		android:layout_marginRight="5dp"
+            	android:layout_marginBottom="5dp"
+            	android:padding="4dp"
+            	android:listSelector="@android:color/transparent"
+            	android:numColumns="4"
+            	android:horizontalSpacing="4dp"
+            	android:verticalSpacing="4dp"
+            	android:gravity="start"/>
+            
+           
+           	<!-- 第四部分，用来显示点名结果 -->
+    		<LinearLayout style="@style/Cabbage_fill_con.ori_vertical.margin"
+        		android:layout_width="fill_parent"
+        		android:layout_height="wrap_content">
+        		<TextView android:id="@+id/result"
+            		style="@style/Cabbage_content"
+            		android:layout_margin="18dp"
+            		android:textColor="@color/blue"
+            		android:text="这里是结果！"/>
+        		<Button android:id="@+id/result_find"
+            		style="@style/Cabbage_content"
+            		android:layout_marginRight="25dp"
+            		android:layout_gravity="right"
+            		android:text="点名"
+            		android:background="@drawable/button_bg"
+        			android:textColor="@drawable/title_font"
+        			android:textSize="16sp"/>
+    		</LinearLayout>
+	
+	</LinearLayout>
+	</ScrollView>
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:id="@+id/work_waiting_layout"
+        android:background="#b0000000"
+        android:visibility="gone"
+        android:gravity="center">
+    	<ProgressBar 
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:id="@+id/work_waiting_progress"
+    	    android:clickable="true"/>
+    	<TextView 
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:id="@+id/work_waiting_textView"
+    	    android:text="正在拼了命的为您加载结果 ..."
+    	    android:textColor="@color/white"/>
+    </LinearLayout>
+    
+</FrameLayout>
+
+

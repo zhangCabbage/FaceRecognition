@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    
+    
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp">
+    
+    <TextView 
+        android:id="@+id/textView_result"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:text="@string/textView_result_text"
+        />
+    
+    <Button 
+        android:id="@+id/button_takePic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_result"
+        android:layout_alignRight="@id/textView_result"
+        android:text="@string/button_takePic_text"
+        />
+    
+    <Button 
+        android:id="@+id/button_fromPicMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/button_takePic"
+        android:layout_toLeftOf="@id/button_takePic"
+        android:layout_marginRight="10dp"
+        android:text="@string/button_fromPicMap_text"
+        />
+    
+    <Button 
+        android:id="@+id/button_onClick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/button_takePic"
+        android:layout_alignLeft="@id/textView_result"
+        android:text="@string/button_onClick_text"
+        />
+    
+    <ImageView 
+        android:id="@+id/imageView"
+		android:layout_below="@id/button_takePic"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		/>
+		  
+	</RelativeLayout>
+	

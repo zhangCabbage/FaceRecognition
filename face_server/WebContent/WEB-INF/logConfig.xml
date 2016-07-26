@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<actions>
+	<LoginControl modelName="登录">
+		<login instanceName="登录"/>
+		<logout instanceName="退出"/>
+		<updatePwd modelName="用户管理" instanceName="修改密码"/>
+	</LoginControl>	
+
+	<!-- 系统管理 -->
+	<UserListingControl>
+	
+		<check_app modelName="用户管理" instanceName="新增用户"/>
+		<updateUser modelName="用户管理" instanceName="修改用户"/>
+		<delUser modelName="用户管理" instanceName="删除用户"/>
+		<changeUser modelName="用户管理" instanceName="修改用户生/失效状态"/>
+		<updateRole4User modelName="用户管理" instanceName="为用户分配角色"/>
+	</UserListingControl>
+	
+	<!-- 权限管理 -->
+	<AuthorityControl>
+	    <addFunctionAuthority modelName="权限管理" instanceName="新增权限项"/>
+	    <updateAuthority modelName="权限管理" instanceName="修改权限项"/>
+	    <delAuthority modelName="权限管理" instanceName="删除权限项"/>
+	    <changeAuthority modelName="权限管理" instanceName="启用/禁用权限项"/>
+	</AuthorityControl>
+	
+	<!-- 角色管理 -->
+	<RoleControl>
+	    <addRole modelName="角色管理" instanceName="新增角色"/>
+	    <updateRole modelName="角色管理" instanceName="修改角色"/>
+	    <deleteRoles modelName="角色管理" instanceName="删除角色"/>
+	    <updateAuthority4Role modelName="角色管理" instanceName="为角色赋权限"/>
+	</RoleControl>
+	
+
+		
+</actions>

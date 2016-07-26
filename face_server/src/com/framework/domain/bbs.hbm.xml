@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping auto-import="true" default-lazy="true">
+
+
+	 <!-- 系统用户 -->
+	<class name="com.framework.domain.User" table="T_USER" dynamic-update="true">
+		<id name="id" type="integer" column="id">
+			<generator class="identity" />
+			<!-- identity ,assigned -->
+		</id>		 
+		<property name="name"  column="name" type="string" />	 
+		<property name="userName"  column="username" type="string" />	 
+		<property name="password" column="password" type="string" />	 	 
+		<property name="email" column="email" type="string" />
+		 <property name="status" column="status" type="integer"></property>
+	</class>
+	<!-- 系统用户 -->
+	<class name="com.framework.domain.UserInfo" table="T_USERINFO"
+		dynamic-update="true">
+		<id name="infoId" type="integer" column="infoId">
+			<generator class="identity" />
+			<!-- identity ,assigned -->
+		</id>
+		
+		<property name="email" column="email" type="string" />
+		<property name="registTime" column="registTime" type="java.sql.Timestamp" />
+		<property name="sex" column="sex" type="integer" />
+		<property name="birthday" column="birthday" type="java.sql.Date" />
+		<property name="head" column="head" type="string" />
+		<property name="hometown" column="hometown" type="string" />
+		<property name="permission" column="permission" type="integer" />
+		<property name="sinature" column="sinature" type="string" />
+		<property name="score" column="score" type="integer" />
+		<property name="status" column="status" type="integer" />
+
+	</class>
+	<!-- 权限 -->
+	<class name="com.framework.domain.FunctionAuthority" table="T_PM_FUNCTIONAUTHORITY">
+		<id name="id" type="string" column="FID">
+			<generator class="assigned" />
+		</id>
+
+		<property name="code" column="code" type="string" />
+		<property name="name" column="name" type="string" />
+		<property name="resource" type="string" column="resource"
+			length="255" />
+		<property name="type" column="type" type="integer" length="20" />
+		<property name="description" column="description" type="string" />
+		<property name="order" column="order" type="integer" />
+		<property name="state" column="state" type="integer" />
+		<!-- <set name="roles" table="T_PM_RoleAuthority" inverse="false"> <key 
+			column="AuthorityId" /> <many-to-many class="com.framework.domain.Role" column="RoleId"/> 
+			</set> -->
+	</class>
+	<!-- 数据库里有一个表后，此处 就有一个域 类，注意 属性和数据库列的对应关系和大小写写法 -->
+
+	
+	<!-- 用户组 -->
+	<class name="com.framework.domain.Group" table="T_USERGROUP"
+		dynamic-update="true">
+		<id name="groupId" type="integer" column="groupId">
+			<generator class="identity" />
+			<!-- identity ,assigned -->
+		</id>
+		<property name="groupName" column="groupName" type="string" />
+	</class>
+	<!-- 权限 -->
+	<class name="com.framework.domain.Permission" table="T_PERMISSION_INFO"
+		dynamic-update="true">
+		<id name="permissionId" type="integer" column="permissionId">
+			<generator class="identity" />
+			<!-- identity ,assigned -->
+		</id>
+		<property name="permissionName" column="permissionName" type="string" />
+		<property name="pre_permissionId" column="pre_permissionId" type="integer" />
+	</class>
+	<!-- 日志 -->
+	<class name="com.framework.domain.Log" table="T_LOG"
+		dynamic-update="true">
+		<id name="loggingId" type="integer" column="loggingId">
+			<generator class="identity" />
+<!-- 			identity ,assigned -->
+		</id>
+		<property name="logContent" column="logContent" type="string" />
+		<property name="log_time" column="log_time" type="java.sql.Timestamp" />
+	</class>
+	
+	<!-- 管理员 -->
+	<class name="com.framework.domain.Users" table="T_User"
+		dynamic-update="true">
+		<id name="userId" type="integer" column="userId">
+			<generator class="identity" />
+			<!-- identity ,assigned -->
+		</id>
+		<property name="userName" column="username" type="string" />
+		<property name="password" column="password" type="string" />
+		<property name="registTime" column="registTime" type="java.sql.Timestamp" />
+	</class>
+</hibernate-mapping>

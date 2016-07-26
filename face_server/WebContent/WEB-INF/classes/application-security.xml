@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<b:beans xmlns="http://www.springframework.org/schema/security" xmlns:b="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.0.4.xsd">
+	<http auto-config="true" access-decision-manager-ref="accessManager">
+	    <!-- 当访问被拒绝时，会转到403.jsp -->
+		<intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/logout.do" access="IS_AUTHENTICATED_ANONYMOUSLY"/> 
+	  
+       <intercept-url pattern="/modules/system/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/help/help/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<intercept-url pattern="/css/**" filters="none"/>
+		<intercept-url pattern="/services/**" filters="none"/>
+		<intercept-url pattern="/images/**" filters="none"/>
+ 
+		<intercept-url pattern="/components/**" filters="none"/>
+		<intercept-url pattern="/modules/common/**" filters="none"/>
+		<intercept-url pattern="/modules/system/**" filters="none"/>
+		<intercept-url pattern="/modules/portlets/**" filters="none"/>
+		<intercept-url pattern="/modules/**/*.js" filters="none"/>
+ 
+		<intercept-url pattern="/failure.json" filters="none"/>
+		<intercept-url pattern="/403.jsp" filters="none"/>
+		<intercept-url pattern="/initData.json" filters="none"/>
+ 
+		<intercept-url pattern="/**" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
+		<form-login login-page="/login.jsp" authentication-failure-url="/login.jsp?error=true" default-target-url="/login.do"/>
+		<logout logout-success-url="/login.jsp"/>
+		<access-denied-handler ref="accessDeniedHandler"/>
+		<!-- <session-management>
+			<concurrency-control max-sessions="1" error-if-maximum-exceeded="true" />
+		</session-management> -->
+		<!-- 增加一个filter，这点与Acegi是不一样的，不能修改默认的filter了，这个filter位于FILTER_SECURITY_INTERCEPTOR之前 -->
+		<!-- <custom-filter before="FILTER_SECURITY_INTERCEPTOR" ref="securityInterceptor"/> -->
+	</http>
+
+	<!-- 认证管理器，实现用户认证的入口，主要实现UserDetailsService接口即可 -->
+	<authentication-manager alias="authenticationManager">
+		<!-- <authentication-provider user-service-ref="userService"/> -->
+		<authentication-provider ref="authenticationProvider"/>
+	</authentication-manager>
+	<b:bean id="md5" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+	<b:bean id="passwordEncoder" class="org.springframework.security.authentication.encoding.Md5PasswordEncoder"/>
+	<b:bean id="userService" class="com.framework.security.UserService">
+		<b:property name="genericHBDao" ref="genericHBDao"/>
+		<b:property name="genericJDBCDao" ref="genericJDBCDao"/>
+	</b:bean>
+	<b:bean id="authenticationProvider" class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+		<b:property name="userDetailsService" ref="userService"/>
+		<b:property name="hideUserNotFoundExceptions" value="false"/>
+		<b:property name="passwordEncoder" ref="md5"/>
+	</b:bean>
+	<!-- 访问决策器，决定某个用户具有的角色，是否有足够的权限去访问某个资源 -->
+	<b:bean id="accessManager" class="org.springframework.security.access.vote.AffirmativeBased">
+		<b:property name="decisionVoters">
+			<b:list>
+				<b:bean class="com.framework.security.AccessValueVoter"/>
+			</b:list>
+		</b:property>
+	</b:bean>
+	<!-- <b:bean id="securityMetadataSource" class="com.framework.security.SecurityMetadataSource" init-method="loadResourceDefine">
+		<b:property name="genericHBDao" ref="genericHBDao"/>
+	</b:bean> -->
+	<b:bean id="accessDeniedHandler" class="com.framework.security.AccessExceptionHandler">
+		<b:property name="errorPage" value="/403.jsp"/>
+		<b:property name="ajaxError" value="/failure.json"/>
+	</b:bean>
+	<!-- 不能使用org.springframework.security.web.access.intercept.FilterSecurityInterceptor，否则默认Filter不起作用 -->
+	<!-- <b:bean id="securityInterceptor" class="com.framework.security.SecurityInterceptor">
+		<b:property name="authenticationManager" ref="authenticationManager"/>
+		<b:property name="accessDecisionManager" ref="accessManager"/>
+		<b:property name="securityMetadataSource" ref="securityMetadataSource"/>
+	</b:bean> -->
+</b:beans>

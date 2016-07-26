@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg">
+    
+    <LinearLayout android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:orientation="vertical" >
+
+    <com.zhang.view.TitleBarView 
+        android:id="@+id/select_student_actionBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        
+    </com.zhang.view.TitleBarView>
+	
+    <com.zhang.view.ClearEditText 
+        android:id="@+id/select_student_myFindEditText"
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dip"
+        android:background="@drawable/acm_inputbox"
+        android:drawableLeft="@drawable/search"
+        android:hint="请输入关键字"
+        android:singleLine="true"
+        android:textSize="15.0dip"
+        android:paddingLeft="5dp"/>
+    
+    <ListView 
+        android:id="@+id/select_student_list"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="8dip"
+	    android:layout_marginBottom="8dip"
+	    android:layout_marginLeft="5dip"
+	    android:layout_marginRight="5dip"
+	    android:scrollbars="none"
+	    android:fastScrollEnabled="true"
+	    android:fadingEdge="none"
+	    android:transcriptMode="alwaysScroll"
+	    android:drawSelectorOnTop="false">
+    </ListView>
+    
+</LinearLayout>
+    
+    <Button 
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/select_student_add_button"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/button_bg"
+        android:textColor="@drawable/title_font"
+        android:textSize="13sp"
+        android:text="添加人员"/>
+    <Button 
+        android:layout_above="@id/select_student_add_button"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:id="@+id/select_student_delete_button"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:background="@drawable/button_bg"
+        android:textColor="@drawable/title_font"
+        android:textSize="13sp"
+        android:text="删除人员"/>
+</RelativeLayout>

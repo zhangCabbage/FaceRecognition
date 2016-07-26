@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg">
+    
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/base_bg"
+    android:orientation="vertical" >
+    
+    <!-- 第一部分，用来选择班级 -->
+    <LinearLayout style="@style/Cabbage_fill_con.ori_vertical.margin"
+        android:paddingTop="8dp">
+        <RelativeLayout style="@style/Cabbage_content">
+            <ImageView android:id="@+id/fun_title"
+                style="@style/main_title"
+                android:background="@drawable/t_title_1"/>
+            <TextView style="@style/Cabbage_content"
+                android:textColor="@color/white"
+                android:layout_centerInParent="true"
+                android:text="测颜龄"/>
+        </RelativeLayout>
+        
+        <LinearLayout style="@style/Cabbage_fill_con.ori_vertical"
+            android:padding="10dp"
+            android:background="@color/white">
+            <LinearLayout style="@style/Cabbage_fill_con.ori_horizontal">
+                <Button android:id="@+id/fun_button_fromPicMap"
+        			android:layout_width="60dp"
+        			android:layout_height="40dp"
+        			android:layout_marginRight="10dp"
+        			android:background="@drawable/button_bg"
+        			android:textColor="@drawable/title_font"
+        			android:textSize="13sp"
+        			android:text="@string/button_fromPicMap_text"/>
+            	<Button 
+        			android:id="@+id/fun_button_takePic"
+        			android:layout_width="60dp"
+        			android:layout_height="40dp"
+        			android:background="@drawable/button_bg"
+        			android:textColor="@drawable/title_font"
+        			android:textSize="13sp"
+        			android:text="@string/button_takePic_text"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/fun_imageView"
+                android:layout_width="fill_parent"
+                android:layout_height="330dp"
+                android:scaleType="fitCenter"
+                />
+            
+        </LinearLayout>
+    
+    </LinearLayout>
+    
+    <RelativeLayout android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="10dp">
+        
+        
+        <Button android:id="@+id/fun_share_Button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+        	android:textColor="@drawable/title_font"
+        	android:visibility="gone"
+            android:text="分享"/>
+        
+        <Button android:id="@+id/fun_findResult_Button"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+        	android:textColor="@drawable/title_font"
+            android:text="@string/button_onClick_text"/>
+        
+        <TextView android:id="@+id/fun_result_TextView"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_alignRight="@id/fun_findResult_Button"
+        	android:layout_above="@id/fun_findResult_Button"
+        	android:layout_alignParentTop="true"
+        	android:gravity="center"
+        	android:textColor="@color/blue"/>
+        
+    </RelativeLayout>
+    
+	</LinearLayout>
+	
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:id="@+id/fun_waiting_layout"
+        android:background="#b0000000"
+        android:visibility="gone"
+        android:gravity="center">
+    	<ProgressBar 
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:id="@+id/fun_waiting_progress"
+    	    android:clickable="true"/>
+    	<TextView 
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_gravity="center"
+    	    android:id="@+id/fun_waiting_textView"
+    	    android:text="正在拼了命的为您加载结果 ..."
+    	    android:textColor="@color/white"/>
+    </LinearLayout>
+</FrameLayout>
+

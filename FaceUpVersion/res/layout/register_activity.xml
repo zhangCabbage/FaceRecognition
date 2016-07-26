@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/opt_bg"
+    android:padding="20dp"
+    android:orientation="vertical" >
+	
+    <TextView
+        android:id="@+id/register_text01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register_menu"
+        android:textColor="#000000"
+        android:textSize="18dip"/>
+    
+    <RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:layout_marginTop="15dp"
+	    android:padding="2dp">
+	    
+        <EditText
+            android:id="@+id/register_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_toRightOf="@+id/register_text02" />
+        
+        <TextView
+        	android:id="@+id/register_text02"
+        	android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentLeft="true"
+			android:layout_alignTop="@id/register_name"
+			android:layout_alignBottom="@id/register_name"
+			android:gravity="center"
+			android:textColor="#000000"
+			android:text="姓名：" />
+	</RelativeLayout>
+    
+    <RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:gravity="center_vertical"
+	    android:padding="2dp">
+	    
+	    <TextView
+            android:id="@+id/register_text03"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_centerVertical="true"
+			android:textColor="#000000"
+			android:text="性别：" />
+	    
+        <RadioGroup 
+        	android:id="@+id/register_gender_radioGroup"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_toRightOf="@id/register_text03"
+        	android:orientation="horizontal">
+        	<RadioButton 
+            	android:id="@+id/radioButton_girl"
+            	android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:text="女"/>
+			<RadioButton 
+				android:id="@+id/radioButton_boy"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textColor="#000000"
+				android:text="男"/>
+		</RadioGroup>
+		
+	</RelativeLayout>
+    
+ 	<RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="2dp">
+	    <TextView
+			android:id="@+id/register_text04"
+			android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_centerVertical="true"
+        	android:textColor="#000000"
+        	android:text="学校：" />
+        
+        <AutoCompleteTextView 
+            android:id="@+id/register_school"
+            android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/register_text04"
+			android:layout_alignParentRight="true"
+            />
+       
+	</RelativeLayout>
+    
+ 	<RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="2dp">
+        
+	    <TextView
+        	android:id="@+id/register_text05"
+			android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="8dp"
+        	android:layout_centerVertical="true"
+        	android:textColor="#000000"
+        	android:text="邮箱：" />
+       
+        <EditText 
+            android:id="@+id/register_postbox"
+            android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/register_text05"
+			android:layout_alignParentRight="true"
+            />
+        
+        
+	</RelativeLayout>
+	
+ 	<RelativeLayout
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:padding="2dp">
+	    
+       <TextView
+			android:id="@+id/register_text06"
+        	android:layout_width="wrap_content"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="16dp"
+        	android:layout_centerVertical="true"
+        	android:textColor="#000000"
+        	android:text="头像：" />
+        
+        <RelativeLayout
+            android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@id/register_text06"
+			android:layout_alignParentRight="true">
+        	
+            <Button 
+            	android:id="@+id/register_takePic"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentRight="true"
+            	android:text="@string/button_takePic_text"/>
+        	
+        	<Button 
+            	android:id="@+id/register_fromPicMap"
+            	android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_toLeftOf="@id/register_takePic"
+            	android:layout_alignTop="@id/register_takePic"
+            	android:text="@string/button_fromPicMap_text"/>
+            
+        	<EditText
+        	    android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_alignParentLeft="true"
+            	android:layout_toLeftOf="@id/register_fromPicMap"
+            	android:layout_alignTop="@id/register_takePic"
+            	android:layout_alignBottom="@id/register_takePic"
+            	android:text="@string/add_pic_path"
+            	android:editable="false"
+            	android:singleLine="true"/>
+        
+        </RelativeLayout>
+        
+         
+	</RelativeLayout>
+    
+</LinearLayout>

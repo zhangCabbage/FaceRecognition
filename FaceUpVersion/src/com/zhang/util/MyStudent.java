@@ -12,6 +12,13 @@ public class MyStudent implements Serializable{
 	private String studentName;
 	private String studentGender;
 	private String studentPhone;
+	private int flag;
+	public int getFlag() {
+		return flag;
+	}
+	public void setFlag(int flag) {
+		this.flag = flag;
+	}
 	public int getStudentID() {
 		return studentID;
 	}

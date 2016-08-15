@@ -1,7 +1,6 @@
 package com.zhang.activity;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import orange.zhang.app.R;
@@ -11,33 +10,27 @@ import android.os.Handler;
 import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
-import com.zhang.adapter.AttendListAdapter;
+import com.zhang.adapter.StuAttendListAdapter;
 import com.zhang.service.AttendService;
 import com.zhang.util.BaseActivity;
-import com.zhang.util.MyAttend;
-import com.zhang.util.MyClass;
 import com.zhang.util.MyDeBug;
-import com.zhang.util.MyShowToast;
+import com.zhang.util.MyStudent;
 import com.zhang.util.Parameter;
 import com.zhang.view.TitleBarView;
 
-public class ShowClassTotalAttendActivity extends BaseActivity implements OnClickListener{
+public class ShowClassSomeTimeAttendActivity extends BaseActivity implements OnClickListener{
 
-	private Date startDate;
-	private Date endDate;
-	private MyClass selectedClass = null;
-	
 	private TitleBarView actionBar;
 	private ListView attendListView ; 
-	private AttendListAdapter attendListAdapter;
+	private StuAttendListAdapter attendListAdapter;
 	
-	private ArrayList<MyAttend> myAttendList = new ArrayList<MyAttend>();
+	private ArrayList<MyStudent> myAttendList = new ArrayList<MyStudent>();
 
 	Intent intent;//上一级Activity传过来的团队信息
+	int classID = 0;
+	long time = 0;
 	
 	private final static int FindStudent = 123;
 	
@@ -48,7 +41,7 @@ public class ShowClassTotalAttendActivity extends BaseActivity implements OnClic
 			//
 			if(msg.what == FindStudent){
 				//给list列表设置适配器，
-				attendListAdapter = new AttendListAdapter(ShowClassTotalAttendActivity.this, myAttendList, true);
+				attendListAdapter = new StuAttendListAdapter(ShowClassSomeTimeAttendActivity.this, myAttendList);
 				attendListView.setAdapter(attendListAdapter);
 			}
 		}
@@ -58,13 +51,12 @@ public class ShowClassTotalAttendActivity extends BaseActivity implements OnClic
 	@Override
 	public void setContentView() {
 		// TODO Auto-generated method stub
-		setContentView(R.layout.activity_show_class_total_attend);
-		MyDeBug.L("------ShowClassTotalAttendActivity------");
-		
+		setContentView(R.layout.activity_show_attend);
+		MyDeBug.L("------ShowClassSomeTimeAttendActivity------");
 		intent = getIntent();
-		startDate = (Date) intent.getSerializableExtra("settingStartDate");
-		endDate = (Date) intent.getSerializableExtra("settingEndDate");
-		selectedClass = (MyClass) intent.getSerializableExtra("selectedClass");
+		classID = Integer.parseInt(intent.getStringExtra("classID"));
+		time = Long.parseLong(intent.getStringExtra("time"));
+		
 	}
 
 	@Override
@@ -75,29 +67,27 @@ public class ShowClassTotalAttendActivity extends BaseActivity implements OnClic
 		actionBar.setBtnLeft(R.drawable.boss_unipay_icon_back, "返回");
 		
 		attendListView = (ListView) findViewById(R.id.show_attend_list);
-		new FindclassAttendThread().start();
+		new findAllStuAttendThread().start();
 		
 	}
 
-	public class FindclassAttendThread extends Thread{
+	public class findAllStuAttendThread extends Thread{
 		
 		@Override
 		public void run() {
 			//用来联网查找此团队下对应的所有人员。
 			MyDeBug.L("------findAllStuAttendThread------");
 			List<Parameter> params = new ArrayList<Parameter>();
-			params.add(  new Parameter("classID", Integer.valueOf( selectedClass.getClassID() ).toString() ) );
-			params.add(  new Parameter("startDate", Long.valueOf( startDate.getTime() ).toString() ) );
-			params.add(  new Parameter("endDate", Long.valueOf( endDate.getTime() ).toString() ) );
+			params.add(  new Parameter("classID", Integer.valueOf( classID ).toString() ) );
+			params.add(  new Parameter("time", Long.valueOf( time ).toString() ) );
 			
-			myAttendList = (ArrayList<MyAttend>) AttendService.instance().findclassAttend(params);
+			myAttendList = (ArrayList<MyStudent>) AttendService.instance().findAllStuOfClassAttend(params);
 			
 			if(myAttendList!=null){
 				MyDeBug.L("findAllStuAttendThread-result-not-null:");
 			}else{
 				MyDeBug.L("findAllStuAttendThread-result-Null:");
 			}
-			
 			Message message = handler.obtainMessage();
 			message.obj = myAttendList;
 			message.what = FindStudent;
@@ -111,19 +101,6 @@ public class ShowClassTotalAttendActivity extends BaseActivity implements OnClic
 		// TODO Auto-generated method stub
 		actionBar.setBtnLeftOnclickListener(this);
 		actionBar.setBtnRightOnclickListener(this);
-		attendListView.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
-				// TODO Auto-generated method stub
-				MyDeBug.L("zhang");
-				Intent intent = new Intent();
-				intent.putExtra("classID", selectedClass.getClassID());
-				intent.putExtra("time", myAttendList.get(position).getTime());
-				intent.setClass(ShowClassTotalAttendActivity.this, ShowClassSomeTimeAttendActivity.class);
-			}
-		});
 	}
 
 	@Override
@@ -141,4 +118,9 @@ public class ShowClassTotalAttendActivity extends BaseActivity implements OnClic
 		}
 	}
 	
+	@Override
+	protected void onResume() {
+		new findAllStuAttendThread().start();
+		super.onResume();
+	}
 }

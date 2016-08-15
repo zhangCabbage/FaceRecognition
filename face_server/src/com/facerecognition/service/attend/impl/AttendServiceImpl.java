@@ -42,6 +42,31 @@ public class AttendServiceImpl implements AttendServiceDAO  {
 			return null;
 		}
 		return result;
+		//
+	}
+	
+	@Override
+	public List<Map<String, Object>> findAllStuOfClassAttend(Map<String, Object> paraMap) {
+		// TODO Auto-generated method stub
+		List<Map<String, Object>> result = null ; 
+		int classID = Integer.parseInt( paraMap.get("classID").toString() );
+		long time = Long.parseLong( paraMap.get("time").toString() );
+		
+		String sql = "select stuName, flag from attend, student where attend.classID=? AND attend.time = ? AND attend.studentID = student.stuID" ; 
+		List<Object> args = new ArrayList<Object>();
+		args.add(classID);
+		args.add(time);
+		System.out.println("sql:"+sql+"，args:"+args.toString());
+		
+		try {
+			result = genericHBDao.findMapBySQL(sql, args.toArray());
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return null;
+		}
+		return result;
 	}
 
 	@Override

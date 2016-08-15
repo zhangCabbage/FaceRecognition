@@ -33,6 +33,19 @@ public class AttendControl extends BaseControl{
 		return result;
 	}
 	
+	@RequestMapping(value="/findallstuofclassattend.json")
+	@ModelAttribute(value="attendList")
+	public List< Map<String, Object> > findAllStuOfClassAttend(@RequestParam Map<String, Object> paraMap){
+		//验证：
+		List< Map<String, Object> > result = null;
+		try {
+			result = attendService.findAllStuOfClassAttend(paraMap);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return result;
+	}
+	
 	@RequestMapping(value="/findclassattend.json")
 	@ModelAttribute(value="attendList")
 	public List< Map<String, Object> > findClassAttend(@RequestParam Map<String, Object> paraMap){

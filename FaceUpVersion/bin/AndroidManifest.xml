@@ -39,6 +39,7 @@
         <activity android:name="com.zhang.activity.SelectAttendTimeActivity"></activity>
         <activity android:name="com.zhang.activity.SelectAttendClassActivity"></activity>
         <activity android:name="com.zhang.activity.ShowClassTotalAttendActivity"></activity>
+        <activity android:name="com.zhang.activity.ShowClassSomeTimeAttendActivity"></activity>
         
         <activity android:name="com.zhang.activity.UseCamera" android:label="@string/app_name"></activity>
         <activity android:name="com.zhang.activity.PersonAdd"></activity>

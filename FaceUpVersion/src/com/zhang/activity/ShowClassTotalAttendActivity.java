@@ -118,10 +118,13 @@ public class ShowClassTotalAttendActivity extends BaseActivity implements OnClic
 					int position, long id) {
 				// TODO Auto-generated method stub
 				MyDeBug.L("zhang");
+				MyDeBug.L("classID -- "+selectedClass.getClassID());
+				MyDeBug.L("time -- "+ myAttendList.get(position).getTime());
 				Intent intent = new Intent();
 				intent.putExtra("classID", selectedClass.getClassID());
 				intent.putExtra("time", myAttendList.get(position).getTime());
 				intent.setClass(ShowClassTotalAttendActivity.this, ShowClassSomeTimeAttendActivity.class);
+				startActivity(intent);
 			}
 		});
 	}

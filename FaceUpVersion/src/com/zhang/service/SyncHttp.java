@@ -23,8 +23,9 @@ import android.util.Log;
 
 
 public class SyncHttp {
-	public static final String host="http://120.24.42.115:8080/face_server";
+	public static final String host="http://123.57.0.64:8080/face_server";
 //	public static final String host="http://www.tyorange.com.cn/notify_server";
+	
 	/**
 	 * 通过GET方式发送请求
 	 * @param url URL地址

@@ -54,9 +54,10 @@ public class ShowClassSomeTimeAttendActivity extends BaseActivity implements OnC
 		setContentView(R.layout.activity_show_attend);
 		MyDeBug.L("------ShowClassSomeTimeAttendActivity------");
 		intent = getIntent();
-		classID = Integer.parseInt(intent.getStringExtra("classID"));
-		time = Long.parseLong(intent.getStringExtra("time"));
 		
+		classID = intent.getExtras().getInt("classID");
+		time = intent.getExtras().getLong("time");
+		MyDeBug.L("------123------");
 	}
 
 	@Override

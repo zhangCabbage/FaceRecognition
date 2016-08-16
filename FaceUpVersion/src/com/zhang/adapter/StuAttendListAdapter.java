@@ -55,7 +55,7 @@ public class StuAttendListAdapter extends BaseAdapter{
 		
 		position = this.len - 1 - position;
 		timeText.setText( attendList.get(position).getStudentName() );
-		flagText.setText( attendList.get(position).getFlag() == 0 ? "缺勤" : "正常");
+		flagText.setText( attendList.get(position).getFlag() == 1 ? "缺勤" : "正常");
 		
 		return convertView;
 	}
